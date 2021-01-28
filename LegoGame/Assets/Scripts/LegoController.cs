@@ -185,7 +185,7 @@ public class LegoController : MonoBehaviour
             {
                 if (d.transform.tag == "cylinder")
                 {
-                    if (d.GetComponent<RayCast>().RayCastObjectY != 0)
+                    if (d.GetComponent<RayCast>().RayCastObjectY != 0 )
                     {
                         if (MinDistance < d.GetComponent<RayCast>().RayCastObjectY)
                         {
@@ -194,7 +194,7 @@ public class LegoController : MonoBehaviour
                         }
                     }
 
-                    d.GetComponent<RayCast>().uses = false;
+                    d.GetComponent<RayCast>().SetBusy();
                 }
 
             }

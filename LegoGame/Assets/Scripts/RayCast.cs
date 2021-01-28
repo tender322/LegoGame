@@ -7,7 +7,7 @@ public class RayCast : MonoBehaviour
 {
 
     
-    public bool uses;
+    public bool busy;
     public int _distance;
     public Color DefaultColor;
     public Color SelectColor;
@@ -17,7 +17,18 @@ public class RayCast : MonoBehaviour
     public GameObject _LO = null;
     private void Start()
     {
+        busy = false;
         MR = GetComponent<MeshRenderer>();
+    }
+
+    private void Update()
+    {
+        Vector3 down = transform.TransformDirection(Vector3.down);
+        RaycastHit hit;
+        if (Physics.Raycast(this.transform.position, down, out hit, _distance))
+        {
+            Debug.DrawRay(transform.position, down, Color.red);
+        }
     }
 
     public void ChangePositionRayCastCheck()
@@ -31,6 +42,8 @@ public class RayCast : MonoBehaviour
                _LO.gameObject.GetComponent<RayCast>().ChangeDefaultMaterial();
            hit.collider.gameObject.GetComponent<RayCast>().ChangeMaterial();
            RayCastObjectY = hit.collider.gameObject.GetComponent<Transform>().position.y;
+           if (hit.collider.gameObject.GetComponent<RayCast>().busy)
+               RayCastObjectY = 0;
            _LO = hit.collider.gameObject;
        }else
        {
@@ -41,6 +54,17 @@ public class RayCast : MonoBehaviour
        }
     }
 
+
+    public void SetBusy()
+    {
+        _LO.GetComponent<RayCast>().ChangeBusy();
+    }
+
+    public void ChangeBusy()
+    {
+        busy = true;
+    }
+
     public void OffLego()
     {
         if(_LO)
@@ -49,12 +73,14 @@ public class RayCast : MonoBehaviour
     
     public void ChangeMaterial()
     {
-        MR.material.color = SelectColor;
+        if(this.gameObject.tag !="ended")
+            MR.material.color = SelectColor;
     }
 
     public void ChangeDefaultMaterial()
     {
-        MR.material.color = DefaultColor;
+        if(this.gameObject.tag !="ended")
+            MR.material.color = DefaultColor;
     }
 
 }

@@ -10,8 +10,7 @@ public class Controller : MonoBehaviour
     
     private int[] CountCylinder;
     
-    private bool Uses = true;
-    public Color DefaultColor;
+    private Color DefaultColor;
     
     public int c = 0;    // Определение кол-во цилиндров - точек
 
@@ -19,16 +18,25 @@ public class Controller : MonoBehaviour
     void Start()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        DefaultColor = transform.GetChild(0).GetComponent<MeshRenderer>().material.color;
        
         foreach (Transform d in this.gameObject.transform)
         {
-            d.GetComponent<MeshRenderer>().material.color = DefaultColor;
+            if(d.GetComponent<MeshRenderer>())
+                d.GetComponent<MeshRenderer>().material.color = DefaultColor;
             if (d.transform.tag == "cylinder")
             {
                 c++;
                 d.gameObject.AddComponent<BoxCollider>();
                 var dd = d.gameObject.AddComponent<RayCast>();
-                dd.uses = Uses;
+                dd._distance = GM._distance;
+                dd.SelectColor = GM.SelectColor;
+                dd.DefaultColor = DefaultColor;
+            }
+
+            if (d.transform.tag == "ended")
+            {
+                var dd = d.gameObject.AddComponent<RayCast>();
                 dd._distance = GM._distance;
                 dd.SelectColor = GM.SelectColor;
                 dd.DefaultColor = DefaultColor;
@@ -59,5 +67,6 @@ public class Controller : MonoBehaviour
         }
     }
 
+    public void SetDefaultColor(Color _color) { DefaultColor = _color; }
 
 }

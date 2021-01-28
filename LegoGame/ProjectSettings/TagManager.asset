@@ -6,6 +6,11 @@ TagManager:
   tags:
   - cylinder
   - checker
+  - ended
+  - Lego2x1
+  - Lego2x2
+  - Roof2x1
+  - Wall2x2
   layers:
   - Default
   - TransparentFX

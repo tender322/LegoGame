@@ -29,7 +29,7 @@ public class ScrollController : MonoBehaviour
     {
         
         GameObject ico = Instantiate(IconFab, this.transform);
-        var texture = Resources.Load("icons/" + Lego.name);
+        var texture = Resources.Load("icons/" + Lego.tag);
         var icoObj = ico.GetComponent<RawImage>();
         icoObj.texture = (Texture) texture;
         icoObj.color = _color;
