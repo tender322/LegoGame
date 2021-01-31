@@ -62,16 +62,6 @@ public class ScrollController : MonoBehaviour
                     lego.transform.position = _pos;
                 }
             }
-
-           //for (int i = 0; i < center.x; i++)
-           //{
-           //    for (int j = 0; j < center.y; j++)
-           //    {
-           //        var lego = Instantiate((GameObject) Resources.Load("objects/Lego2x2"), SF.transform);
-           //        var _pos = new Vector3(start.x + i, 0, start.y + j);
-           //        lego.transform.position = _pos;
-           //    }
-           //}
         }
     }
 

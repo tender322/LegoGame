@@ -18,7 +18,8 @@ public class RayCast : MonoBehaviour
     private void Start()
     {
         busy = false;
-        MR = GetComponent<MeshRenderer>();
+        if(GetComponent<MeshRenderer>())
+            MR = GetComponent<MeshRenderer>();
     }
 
     private void Update()
@@ -54,10 +55,10 @@ public class RayCast : MonoBehaviour
        }
     }
 
-
     public void SetBusy()
     {
         _LO.GetComponent<RayCast>().ChangeBusy();
+        _LO.GetComponent<BoxCollider>().enabled = false;
     }
 
     public void ChangeBusy()
@@ -70,16 +71,24 @@ public class RayCast : MonoBehaviour
         if(_LO)
             _LO.gameObject.GetComponent<RayCast>().ChangeDefaultMaterial();
     }
+
     
+
     public void ChangeMaterial()
     {
-        if(this.gameObject.tag !="ended")
+        if(gameObject.GetComponent<MeshRenderer>())
             MR.material.color = SelectColor;
+    }
+
+    public void ChangeLastLego()
+    {
+        if(_LO)
+            _LO.GetComponent<RayCast>().ChangeDefaultMaterial();
     }
 
     public void ChangeDefaultMaterial()
     {
-        if(this.gameObject.tag !="ended")
+        if(gameObject.GetComponent<MeshRenderer>())
             MR.material.color = DefaultColor;
     }
 

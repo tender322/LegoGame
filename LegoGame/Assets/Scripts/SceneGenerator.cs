@@ -17,9 +17,8 @@ public class SceneGenerator : MonoBehaviour
             v.color = d.GetChild(0).GetComponent<MeshRenderer>().material.color;
             _objectses.Add(v);
         }
+        GenerateScene();
     }
-
-    [ContextMenu("Generate")]
 
     public void GenerateScene()
     {
@@ -40,5 +39,4 @@ public class objects
     public GameObject lego;
     public Color color;
 
-    
 }

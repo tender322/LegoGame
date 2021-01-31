@@ -1,60 +1,60 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
 public class SaveNLoadLego : MonoBehaviour
 {
-    [SerializeField] private LegoScene _legoScene = new LegoScene();
+    [SerializeField]private  LegoScene _legoScene = new LegoScene();
+
+    private void Start()
+    {
+        LoadScene();
+    }
 
     [ContextMenu("SaveJson")]
-    public void SaveJson()
+    public void SaveJson(String name, bool status)
     {
-        File.WriteAllText(Application.streamingAssetsPath+"/LegoScenes.json",JsonUtility.ToJson(_legoScene));
+        ScenesLegoClass SLC = new ScenesLegoClass();
+        SLC._SceneName = name;
+        SLC._status = status;
+        _legoScene._scenes.Add(SLC);
+        File.WriteAllText(Application.streamingAssetsPath +"/LegoScenes.json",JsonUtility.ToJson(_legoScene));
     }
     [ContextMenu("LoadJson")]
     public void LoadJson()
     {
         _legoScene = JsonUtility.FromJson<LegoScene>(File.ReadAllText(Application.streamingAssetsPath + "/LegoScenes.json"));
     }
-
     
-    public void LoadScene(String SceneName)
+    public void LoadScene()
     {
-        ScrollController SC = GameObject.Find("Content").GetComponent<ScrollController>();
+        LoadJson();
+       //for (int i = 0; i < _legoScene._scenes.Count; i++)
+       //{
+       //    bool _status = _legoScene._scenes[i]._status;
+       //    if (_status)
+       //    { gameObject.GetComponent<Scenes>().SetSceneReady(_legoScene._scenes[i]._SceneName); }
+       //    else
+       //    { gameObject.GetComponent<Scenes>().SetCloseScene(_legoScene._scenes[i]._SceneName); }
+       //}
+        this.gameObject.GetComponent<SceneController>().LoadEnding();
         
-        
-        foreach (var Legos in _legoScene.Scenes)
-        {
-            if (Legos.SceneName == SceneName)
-            {
-                foreach (var LegoObject in Legos.lego)
-                {
-                    SC.AddListLego(LegoObject.LegoObject,LegoObject.ColorName);
-                    SC.CreateStartField(Legos.StartLegoCount_2);
-                }
-            }
-        }
     }
 
 }
 [System.Serializable]
 public class LegoScene
 {
-    public List<LegoScenesList> Scenes = new List<LegoScenesList>();
+    public List<ScenesLegoClass> _scenes = new List<ScenesLegoClass>();
+}
+[System.Serializable]
+public class ScenesLegoClass
+{
+     public String _SceneName;
+     public bool _status;
+
 }
 
-[System.Serializable]
-public class LegoScenesList
-{
-    public string SceneName;
-    public Vector2 StartLegoCount_2;
-    public List<LegoLists> lego = new List<LegoLists>();
-}
-[System.Serializable]
-public class LegoLists
-{
-    public GameObject LegoObject;
-    public Color ColorName;
-}
+
+

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8804154803012438254}
   - component: {fileID: -147977257488373495}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Roof2x1
   m_TagString: Roof2x1
   m_Icon: {fileID: 0}
@@ -48,19 +48,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
   c: 0
---- !u!65 &7842007569608939635
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6123858765152302254}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.020000005, y: 0.02, z: 0.019999996}
-  m_Center: {x: -0.0000000018626451, y: 0, z: 0}
 --- !u!1 &7634149034375175053
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +57,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1459428842229146677}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cyl
   m_TagString: cylinder
   m_Icon: {fileID: 0}
@@ -100,9 +87,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3387208667467584958}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cyl (1)
-  m_TagString: ended
+  m_TagString: cylinder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,13 +163,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: roof2x1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db49dac1d36cda44eb9bd2c189ced410, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db49dac1d36cda44eb9bd2c189ced410, type: 3}
---- !u!1 &6123858765152302254 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: db49dac1d36cda44eb9bd2c189ced410, type: 3}
-  m_PrefabInstance: {fileID: 6358300680756496895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6897123970695360020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: db49dac1d36cda44eb9bd2c189ced410, type: 3}

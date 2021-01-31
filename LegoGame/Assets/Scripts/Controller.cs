@@ -56,6 +56,17 @@ public class Controller : MonoBehaviour
         }
     }
 
+    public void DeleteDefaultColor()
+    { 
+        foreach (Transform child in this.gameObject.transform)
+        {
+            if (child.tag == "cylinder")
+            {
+                child.GetComponent<RayCast>().ChangeLastLego();
+            }
+        }
+    }
+
     public void PasteLego()
     {
         foreach (Transform child in this.gameObject.transform)
@@ -68,5 +79,6 @@ public class Controller : MonoBehaviour
     }
 
     public void SetDefaultColor(Color _color) { DefaultColor = _color; }
+    
 
 }

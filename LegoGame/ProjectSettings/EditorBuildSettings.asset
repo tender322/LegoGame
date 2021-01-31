@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainSceneGame.unity
+    guid: 3d9406b6effbaf54188429804482b099
+  - enabled: 1
+    path: Assets/Scenes/LegoHome.unity
+    guid: e8c7455d044f19b459b752f351aa79c7
+  - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

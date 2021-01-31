@@ -29,17 +29,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/LegoController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScrollController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RayCast.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneReady.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ScrollController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveNLoadLego.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/Scenes.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" />
       </list>
     </option>
   </component>
@@ -53,6 +63,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -84,6 +95,9 @@
       <option name="presentableId" value="Default" />
       <updated>1611843552444</updated>
       <workItem from="1611843597713" duration="7108000" />
+      <workItem from="1611925022685" duration="4166000" />
+      <workItem from="1612008849380" duration="14625000" />
+      <workItem from="1612089532937" duration="1650000" />
     </task>
     <servers />
   </component>
@@ -102,8 +116,19 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1656" y="226" width="672" height="677" key="run.anything.popup" timestamp="1612021022664">
+      <screen x="1360" y="0" width="1280" height="984" />
+    </state>
+    <state x="1656" y="226" width="672" height="677" key="run.anything.popup/0.0.1360.728/1360.0.1280.984@1360.0.1280.984" timestamp="1612021022664" />
+    <state x="1663" y="211" width="672" height="678" key="search.everywhere.popup" timestamp="1611929479477">
+      <screen x="1360" y="0" width="1280" height="984" />
+    </state>
+    <state x="1663" y="211" width="672" height="678" key="search.everywhere.popup/0.0.1360.728/1360.0.1280.984@1360.0.1280.984" timestamp="1611929479477" />
   </component>
 </project>

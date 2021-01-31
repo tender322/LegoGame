@@ -39,6 +39,7 @@ public class ButtonController : MonoBehaviour
     {
         if (LC.ActiveLego)
         {
+            LC.ActiveLego.gameObject.GetComponent<Controller>().DeleteDefaultColor();
             Destroy(LC.ActiveLego.gameObject);
         }
     }
