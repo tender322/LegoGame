@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ScrollController : MonoBehaviour
 {
-    private List<GameObject> Legos = new List<GameObject>();
+    public List<GameObject> Legos = new List<GameObject>();
 
     public GameObject IconFab;
     private bool StartField;
@@ -27,42 +27,28 @@ public class ScrollController : MonoBehaviour
 
     public void AddListLego(GameObject Lego, Color _color)
     {
-        
         GameObject ico = Instantiate(IconFab, this.transform);
+        ico.name = Lego.name;
         var texture = Resources.Load("icons/" + Lego.tag);
         var icoObj = ico.GetComponent<RawImage>();
         icoObj.texture = (Texture) texture;
         icoObj.color = _color;
         Legos.Add(Lego);
     }
-
+    
     public void SetActiveListLego(GameObject Lego,bool _active)
     {
         Lego.SetActive(_active);
-        if (_active)
-            Legos.Add(Lego);
-        else
-            Legos.Remove(Lego);
-    }
-
-    public void CreateStartField(Vector2 _vector)
-    {
-        if (StartField)
+        for (int i = 0; i < Legos.Count; i++)
         {
-            StartField = false;
-            Vector2 center = _vector / 2;
-            Vector2 start = center - _vector;
-            var SF = GameObject.Find("StartField");
-            for (int i = 0; i < _vector.x; i += 2)
+            if (Legos[i].name == Lego.name)
             {
-                for (int j = 0; j < _vector.y; j += 2)
-                {
-                    var lego = Instantiate((GameObject) Resources.Load("objects/Lego2x2"), SF.transform);
-                    var _pos = new Vector3(start.x + i+1, 0, start.y + j+1);
-                    lego.transform.position = _pos;
-                }
+                if (_active)
+                    Legos.Add(Legos[i]);
+                else
+                    Legos.Remove(Legos[i]);
             }
         }
+        
     }
-
 }

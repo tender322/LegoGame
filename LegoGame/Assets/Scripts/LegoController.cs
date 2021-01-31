@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LegoController : MonoBehaviour
 {
@@ -191,9 +191,10 @@ public class LegoController : MonoBehaviour
                         {
                             MinDistance = d.GetComponent<RayCast>().RayCastObjectY;
                             next = true;
+                            d.GetComponent<RayCast>().SetBusy();
                         }
-                    }
-
+                    }else if (d.GetComponent<RayCast>().RayCastObjectY == 0)
+                    { break; }
                     d.GetComponent<RayCast>().SetBusy();
                 }
 
@@ -207,13 +208,38 @@ public class LegoController : MonoBehaviour
                     ActiveLego.transform.position.y - delta,
                     ActiveLego.transform.position.z);
                 StartCoroutine(LerpPosition(ActiveLego, _target, GM.SpeedPlace));
-                //ActiveLego.GetComponent<Controller>().Parent.SetActive(false);
                 SC.SetActiveListLego(ActiveLego.GetComponent<Controller>().Parent,false);
                 ActiveLego.GetComponent<Controller>().PasteLego();
+     //           NextLegoPart(ActiveLego);
                 ActiveLego = null;
             }
         }
     }
+
+  // public void NextLegoPart(GameObject _Activelego)
+  // {
+  //     var Lists = SC.GetObjects();
+  //     var TContent = GameObject.Find("Content").transform;
+  //     for (int i = 0; i < Lists.Count; i++)
+  //     {
+  //         if (_Activelego.tag == Lists[i].tag)
+  //         {
+  //             if(_Activelego.transform.GetChild(0).GetComponent<MeshRenderer>().material.color == Lists[i].transform.GetChild(0).GetComponent<MeshRenderer>().material.color )
+  //             {
+  //                 foreach (Transform child in TContent)
+  //                 {
+  //                     if (child.name == Lists[i].name)
+  //                     {
+  //                         child.GetComponent<ButtonController>().repeatInstaniateLego();
+  //                         break;
+  //                     }
+  //                 }
+  //             }
+  //             break;
+  //         }
+  //     }
+  //     
+  // }
 
     public void ChangeRotation()
     {

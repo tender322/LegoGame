@@ -23,7 +23,6 @@ public class SceneGenerator : MonoBehaviour
     public void GenerateScene()
     {
         ScrollController SC = GameObject.Find("Content").GetComponent<ScrollController>();
-        
         foreach (var LegoObject in _objectses)
         {
             SC.AddListLego(LegoObject.lego,LegoObject.color);

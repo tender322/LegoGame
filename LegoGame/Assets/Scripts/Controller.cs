@@ -11,6 +11,8 @@ public class Controller : MonoBehaviour
     private int[] CountCylinder;
     
     private Color DefaultColor;
+
+    private List<Transform> ActiveRaycast = new List<Transform>();
     
     public int c = 0;    // Определение кол-во цилиндров - точек
 
@@ -32,6 +34,7 @@ public class Controller : MonoBehaviour
                 dd._distance = GM._distance;
                 dd.SelectColor = GM.SelectColor;
                 dd.DefaultColor = DefaultColor;
+                ActiveRaycast.Add(d);
             }
 
             if (d.transform.tag == "ended")
@@ -40,6 +43,7 @@ public class Controller : MonoBehaviour
                 dd._distance = GM._distance;
                 dd.SelectColor = GM.SelectColor;
                 dd.DefaultColor = DefaultColor;
+                ActiveRaycast.Add(d);
             }
         }
         CountCylinder = new int[c];
@@ -77,6 +81,7 @@ public class Controller : MonoBehaviour
             }
         }
     }
+    
 
     public void SetDefaultColor(Color _color) { DefaultColor = _color; }
     

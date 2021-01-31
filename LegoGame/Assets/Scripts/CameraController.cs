@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
     {
         transform.LookAt(StartField, Vector3.up);
 
-        Vector2 _pos = new Vector2(JS.Horizontal(), JS.Vertical());
+        Vector2 _pos = new Vector2(-JS.Horizontal(), -JS.Vertical());
 
         float deltaX = 0;
         float deltaY = 0;

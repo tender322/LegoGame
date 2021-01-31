@@ -12,19 +12,18 @@ public class SceneController : MonoBehaviour
     private List<string> CloseClose = new List<string>(); 
     private List<string> StartScenes =  new List<string>();
 
-
+    LoadScenes LS = new LoadScenes();
     private void Start()
     {
         SaveNLoadLego SNL = gameObject.GetComponent<SaveNLoadLego>();
-       // SNL.SaveJson();
+        
     }
 
     public void LoadEnding()
     {
         StartScenes.Add("LegoHome");
-        //Scenes SC = gameObject.GetComponent<Scenes>();
-        //ReadyScene = SC.GetScenesReady();
-        //CloseClose = SC.GetCloseScene();
+        ReadyScene = LS.GetScenesReady();
+        CloseClose = LS.GetCloseScene();
         ReadySceneCreate();
     }
 
@@ -49,11 +48,30 @@ public class SceneController : MonoBehaviour
         
         for (int i = 0; i < CloseClose.Count; i++)
         {
+            Debug.Log("ISTANT3");
             var _scene = Instantiate(FabIconsLegoGame, ContentScene);
             var _SB = _scene.AddComponent<SceneButton>();
             _SB.ControllButton(CloseClose[i],false);
         }
     }
+
+    public void SetScenes(string _name, bool status)
+    {
+        if (status){ LS.SetSceneReady(_name);}
+        else{LS.SetCloseScene(_name);}
+    }
+}
+public class LoadScenes
+{
+    private  List<string> ReadyScene = new List<string>();
+    private  List<string> CloseScene = new List<string>();
+
+    public  List<string> GetScenesReady() { return ReadyScene; }
+    public  void SetSceneReady(string _scene) { ReadyScene.Add(_scene); }
+
+    public  List<string> GetCloseScene() { return CloseScene; }
+    public  void SetCloseScene(string _scene){CloseScene.Add(_scene);}
+   
 }
 
 

@@ -18,6 +18,10 @@ public class SceneButton : MonoBehaviour
         SceneLoad = _scene;
         StatusScene = status;
         transform.GetChild(0).GetComponent<Text>().text = _scene;
+        if (!status)
+        {
+            this.gameObject.GetComponent<RawImage>().color = Color.gray;
+        }
     }
     public void LoadScene()
     {

@@ -9,40 +9,41 @@ public class SaveNLoadLego : MonoBehaviour
 
     private void Start()
     {
+        SaveJson();
         LoadScene();
     }
 
     [ContextMenu("SaveJson")]
-    public void SaveJson(String name, bool status)
+    public void SaveJson()
     {
-        ScenesLegoClass SLC = new ScenesLegoClass();
-        SLC._SceneName = name;
-        SLC._status = status;
-        _legoScene._scenes.Add(SLC);
-        File.WriteAllText(Application.streamingAssetsPath +"/LegoScenes.json",JsonUtility.ToJson(_legoScene));
+        var _path = Application.persistentDataPath + "/LegoScenes.json";
+        File.WriteAllText(_path,JsonUtility.ToJson(_legoScene));
     }
     [ContextMenu("LoadJson")]
     public void LoadJson()
     {
-        _legoScene = JsonUtility.FromJson<LegoScene>(File.ReadAllText(Application.streamingAssetsPath + "/LegoScenes.json"));
+        var _path = Application.persistentDataPath + "/LegoScenes.json";
+        _legoScene = JsonUtility.FromJson<LegoScene>(File.ReadAllText(_path));
     }
     
     public void LoadScene()
-    {
+    { 
         LoadJson();
-       //for (int i = 0; i < _legoScene._scenes.Count; i++)
-       //{
-       //    bool _status = _legoScene._scenes[i]._status;
-       //    if (_status)
-       //    { gameObject.GetComponent<Scenes>().SetSceneReady(_legoScene._scenes[i]._SceneName); }
-       //    else
-       //    { gameObject.GetComponent<Scenes>().SetCloseScene(_legoScene._scenes[i]._SceneName); }
-       //}
+        var LS = gameObject.GetComponent<SceneController>();
+       for (int i = 0; i < _legoScene._scenes.Count; i++)
+       {
+           bool _status = _legoScene._scenes[i]._status;
+           if (_status)
+           {
+               LS.SetScenes(_legoScene._scenes[i]._SceneName, true);
+           }
+           else
+           { LS.SetScenes(_legoScene._scenes[i]._SceneName, false); }
+       }
         this.gameObject.GetComponent<SceneController>().LoadEnding();
-        
     }
-
 }
+
 [System.Serializable]
 public class LegoScene
 {
@@ -53,7 +54,6 @@ public class ScenesLegoClass
 {
      public String _SceneName;
      public bool _status;
-
 }
 
 

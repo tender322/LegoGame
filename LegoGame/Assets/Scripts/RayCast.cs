@@ -59,6 +59,7 @@ public class RayCast : MonoBehaviour
     {
         _LO.GetComponent<RayCast>().ChangeBusy();
         _LO.GetComponent<BoxCollider>().enabled = false;
+        
     }
 
     public void ChangeBusy()

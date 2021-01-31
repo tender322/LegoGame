@@ -17,6 +17,12 @@ public class ButtonController : MonoBehaviour
         GM = GameObject.FindObjectOfType<GameManager>();
     }
 
+    public void repeatInstaniateLego()
+    {
+        var name = this.gameObject.GetComponent<RawImage>().texture.name;
+        InstantiateLego(name);
+    }
+
     public void InstantiateLego(String name)
     {
         CheckerLego();

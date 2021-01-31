@@ -23,6 +23,7 @@
           <e p="SaveNLoadLego.cs" t="Include" />
           <e p="SceneGenerator.cs" t="Include" />
           <e p="ScrollController.cs" t="Include" />
+          <e p="Settings.cs" t="Include" />
         </e>
       </e>
       <e p="LegoGame.sln" t="IncludeFlat" />
