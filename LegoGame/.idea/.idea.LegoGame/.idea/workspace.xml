@@ -44,16 +44,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveNLoadLego.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RayCast.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScrollController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LegoController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/JoyStick.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Settings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RayCast.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LegoController.cs" />
       </list>
     </option>
   </component>
@@ -101,7 +101,10 @@
       <workItem from="1611843597713" duration="7108000" />
       <workItem from="1611925022685" duration="4166000" />
       <workItem from="1612008849380" duration="14625000" />
-      <workItem from="1612089532937" duration="15219000" />
+      <workItem from="1612089532937" duration="15366000" />
+      <workItem from="1612186844110" duration="920000" />
+      <workItem from="1612274851828" duration="1798000" />
+      <workItem from="1612347438558" duration="12491000" />
     </task>
     <servers />
   </component>

@@ -253,6 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7309701508939457436}
   - component: {fileID: 7604220218423195250}
+  - component: {fileID: 8589020969462543347}
   m_Layer: 0
   m_Name: Lego2x1
   m_TagString: Lego2x1
@@ -290,4 +291,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
+  DontChange: {fileID: 0}
   c: 0
+--- !u!65 &8589020969462543347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7942826264711756070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 2.02}
+  m_Center: {x: -0.5, y: 0, z: 0}

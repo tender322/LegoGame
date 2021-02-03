@@ -7,6 +7,7 @@ public class Controller : MonoBehaviour
 {
     private GameManager GM;
     public GameObject Parent;
+    public GameObject DontChange;
     
     private int[] CountCylinder;
     
@@ -16,6 +17,8 @@ public class Controller : MonoBehaviour
     
     public int c = 0;    // Определение кол-во цилиндров - точек
 
+    public List<Transform> ActiveBusyObjects = new List<Transform>();
+
 
     void Start()
     {
@@ -24,8 +27,12 @@ public class Controller : MonoBehaviour
        
         foreach (Transform d in this.gameObject.transform)
         {
-            if(d.GetComponent<MeshRenderer>())
-                d.GetComponent<MeshRenderer>().material.color = DefaultColor;
+            if (d.GetComponent<MeshRenderer>())
+            {
+                if(d.gameObject.tag != "DontChangeColor")
+                    d.GetComponent<MeshRenderer>().material.color = DefaultColor;
+            }
+
             if (d.transform.tag == "cylinder")
             {
                 c++;
@@ -39,6 +46,9 @@ public class Controller : MonoBehaviour
 
             if (d.transform.tag == "ended")
             {
+                c++;
+                d.gameObject.AddComponent<BoxCollider>();
+                d.gameObject.GetComponent<BoxCollider>().enabled = false;
                 var dd = d.gameObject.AddComponent<RayCast>();
                 dd._distance = GM._distance;
                 dd.SelectColor = GM.SelectColor;
@@ -47,6 +57,13 @@ public class Controller : MonoBehaviour
             }
         }
         CountCylinder = new int[c];
+
+
+        if (DontChange)
+        {
+            if(gameObject.tag=="misk")
+                DontChange.GetComponent<MeshRenderer>().material.color = new Color(87/255f,26/255f,0f,255f);
+        }
     }
 
     public void ChangePositionRayCast()
@@ -54,6 +71,10 @@ public class Controller : MonoBehaviour
         foreach (Transform child in this.gameObject.transform)
         {
             if (child.tag == "cylinder")
+            {
+                child.GetComponent<RayCast>().ChangePositionRayCastCheck();
+            }
+            if (child.tag == "ended")
             {
                 child.GetComponent<RayCast>().ChangePositionRayCastCheck();
             }
@@ -68,6 +89,10 @@ public class Controller : MonoBehaviour
             {
                 child.GetComponent<RayCast>().ChangeLastLego();
             }
+            if (child.tag == "ended")
+            {
+                child.GetComponent<RayCast>().ChangeLastLego();
+            }
         }
     }
 
@@ -76,6 +101,10 @@ public class Controller : MonoBehaviour
         foreach (Transform child in this.gameObject.transform)
         {
             if (child.tag == "cylinder")
+            {
+                child.GetComponent<RayCast>().OffLego();
+            }
+            if (child.tag == "ended")
             {
                 child.GetComponent<RayCast>().OffLego();
             }

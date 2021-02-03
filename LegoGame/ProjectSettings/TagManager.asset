@@ -11,6 +11,9 @@ TagManager:
   - Lego2x2
   - Roof2x1
   - Wall2x2
+  - Dog
+  - misk
+  - DontChangeColor
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,9 @@ public class LegoController : MonoBehaviour
     private Vector2 _mlp; // Last Position Mobile
     private Vector3[] frame = new Vector3[2];
     bool _next = false;
+
+    private GameObject LastObjectForFrame = null;
+    private int checkerframe=0;
     private void Start()
     {
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -34,11 +38,87 @@ public class LegoController : MonoBehaviour
         else return -1;
     }
 
+    public GameObject CheckParent(GameObject _obj)
+    {
+        foreach (Transform children in _obj.transform)
+        {
+            if (children.tag == "cylinder" || children.tag == "ended")
+            {
+                if (children.GetComponent<RayCast>().busy == true)
+                {
+                    Debug.Log(children.GetComponent<RayCast>().busyObject.gameObject.transform.parent.gameObject);
+                    CheckParent(children.GetComponent<RayCast>().busyObject.gameObject.transform.parent.gameObject);
+                }
+                else
+                {
+                    return _obj;
+                }
+            }
+            else
+            { return _obj; }
+        }
+        return _obj;
+    }
+
+    public void CheckBusy(Transform _obj)
+    {
+        List<Transform> _actives = _obj.gameObject.GetComponent<Controller>().ActiveBusyObjects;
+        Debug.Log(_actives.Count);
+        if (_actives.Count > 0)
+        {
+            for (int i = 0; i < _actives.Count; i++)
+            {
+                if(_actives[i])
+                    _actives[i].GetComponent<RayCast>().DefualtLegoComponent();
+            }
+        }
+    }
+
     private void Update()
     {
         if (!GM.GetControllLego())
         {
-            if (ActiveLego)
+             if (Input.GetMouseButtonDown(0))
+             {
+                 RaycastHit hit;
+                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                 if (Physics.Raycast(ray,out hit ))
+                 { LastObjectForFrame = hit.transform.gameObject; }
+             }else if (Input.GetMouseButton(0))
+             {
+                 RaycastHit hit;
+                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                 if (Physics.Raycast(ray, out hit))
+                 {
+                     if (hit.transform.gameObject == LastObjectForFrame)
+                     { checkerframe++; }
+                     else { checkerframe = 0; }
+
+                     if (checkerframe > 120)
+                     {
+                         Debug.Log(LastObjectForFrame);
+                         LastObjectForFrame = CheckParent(LastObjectForFrame);
+                         CheckBusy(LastObjectForFrame.transform);
+                         var BC = LastObjectForFrame.GetComponent<Controller>();
+                         BC.Parent.SetActive(true);
+                         foreach (var objects in BC.ActiveBusyObjects)
+                         {
+                             if (objects)
+                             {
+                                 objects.gameObject.GetComponent<RayCast>().busy = false;
+                                 objects.gameObject.GetComponent<BoxCollider>().enabled = true;
+                             }
+                         }
+
+                         var name = BC.Parent.GetComponent<RawImage>().texture.name;
+                         BC.Parent.GetComponent<ButtonController>().InstantiateLego(name);
+                         Destroy(LastObjectForFrame.gameObject);
+                         checkerframe = 0;
+                     }
+                 }
+             }
+
+             if (ActiveLego)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -171,7 +251,7 @@ public class LegoController : MonoBehaviour
                 //            break;
                 //    }
                 //}
-            }
+            } // Controller Lego
         }
     }
 
@@ -179,31 +259,35 @@ public class LegoController : MonoBehaviour
     {
         if (ActiveLego)
         {
+            var c = 0;
             float MinDistance = -Mathf.Infinity;
             bool next = false;
             foreach (Transform d in ActiveLego.gameObject.transform)
             {
-                if (d.transform.tag == "cylinder")
+                if (d.transform.tag == "cylinder" || d.transform.tag =="ended")
                 {
                     if (d.GetComponent<RayCast>().RayCastObjectY != 0 )
                     {
                         if (MinDistance < d.GetComponent<RayCast>().RayCastObjectY)
                         {
                             MinDistance = d.GetComponent<RayCast>().RayCastObjectY;
-                            next = true;
-                            d.GetComponent<RayCast>().SetBusy();
                         }
+                        c++;
                     }else if (d.GetComponent<RayCast>().RayCastObjectY == 0)
-                    { break; }
-                    d.GetComponent<RayCast>().SetBusy();
+                    { return; }
                 }
 
+                if (c == ActiveLego.GetComponent<Controller>().c) { next = true; }
             }
 
             if (next)
             {
+                foreach (Transform d in ActiveLego.gameObject.transform)
+                {
+                    if(d.transform.tag == "cylinder" || d.transform.tag =="ended")
+                        d.GetComponent<RayCast>().SetBusy();
+                }
                 var delta = ActiveLego.transform.position.y - MinDistance;
-
                 Vector3 _target = new Vector3(ActiveLego.transform.position.x,
                     ActiveLego.transform.position.y - delta,
                     ActiveLego.transform.position.z);
