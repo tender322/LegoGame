@@ -18,7 +18,15 @@ public class ScrollController : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+        
     }
+
+    public void Checker()
+    {
+        if(Legos.Count < 4)
+            GameObject.FindObjectOfType<CheckerLevel>().LevelCheck();
+    }
+
 
     public List<GameObject> GetObjects()
     {

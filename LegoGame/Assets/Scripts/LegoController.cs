@@ -295,7 +295,9 @@ public class LegoController : MonoBehaviour
                 SC.SetActiveListLego(ActiveLego.GetComponent<Controller>().Parent,false);
                 ActiveLego.GetComponent<Controller>().PasteLego();
      //           NextLegoPart(ActiveLego);
+                GM._lastrotation = Mathf.RoundToInt(ActiveLego.transform.eulerAngles.y);
                 ActiveLego = null;
+                SC.Checker();
             }
         }
     }

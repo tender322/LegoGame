@@ -11,11 +11,18 @@ public class JoyStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     private Image joystick;
     private Vector2 inputVector;
     private GameManager GM;
+    private float _lastfloatzoom;
+    public Slider _floatzoom;
+    public GameObject SliderZoom;
+    
     private void Start()
     {
         joystickBg = GetComponent<Image>();
         joystick = transform.GetChild(0).GetComponent<Image>();
         GM = GameObject.FindObjectOfType<GameManager>();
+        _floatzoom = SliderZoom.GetComponent<Slider>();
+        _lastfloatzoom = _floatzoom.value;
+
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -48,6 +55,19 @@ public class JoyStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         
     }
 
+    private void Update()
+    {
+        if (_floatzoom.value != _lastfloatzoom)
+        {
+            _lastfloatzoom = _floatzoom.value;
+        }
+    }
+
+    public float ChangeZoom()
+    {
+        int _int = 70 - Mathf.RoundToInt(_lastfloatzoom);
+        return _int;
+    }
 
     public float Horizontal()
     {

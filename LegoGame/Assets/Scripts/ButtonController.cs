@@ -11,10 +11,12 @@ public class ButtonController : MonoBehaviour
     private GameManager GM;
     private void Start()
     {
-        var name = this.gameObject.GetComponent<RawImage>().texture.name;
-        this.gameObject.GetComponent<Button>().onClick.AddListener(()=>InstantiateLego(name));
         LC = GameObject.FindObjectOfType<LegoController>();
         GM = GameObject.FindObjectOfType<GameManager>();
+        var name = this.gameObject.GetComponent<RawImage>().texture.name;
+        
+        this.gameObject.GetComponent<Button>().onClick.AddListener(()=>InstantiateLego(name));
+        
     }
 
     public void repeatInstaniateLego()
@@ -28,7 +30,8 @@ public class ButtonController : MonoBehaviour
         CheckerLego();
         var _color = this.gameObject.GetComponent<RawImage>().color;
         var _ref = Resources.Load("objects/" + name);
-        var _obj = Instantiate((GameObject)_ref);
+        var _parent = GameObject.Find("OnlineLegoScene");
+        var _obj = Instantiate((GameObject)_ref,_parent.transform);
         _obj.transform.position = GM.DefualtPosition;
         foreach (Transform c in _obj.transform)
         {
@@ -37,6 +40,8 @@ public class ButtonController : MonoBehaviour
         }
         _obj.GetComponent<Controller>().SetDefaultColor(_color);
         _obj.GetComponent<Controller>().Parent = this.gameObject;
+        var _rot = GM._lastrotation;
+        _obj.transform.rotation = Quaternion.Euler(_obj.transform.rotation.x,_rot,_obj.transform.rotation.z);
         LC.ActiveLego = _obj;
     }
 

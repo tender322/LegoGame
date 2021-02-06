@@ -3,10 +3,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PreViewScript : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    public object ImageLevel;
+    public GameObject ImageLevel;
     public GameObject Window;
     
     public void OnPointerDown(PointerEventData eventData) {SetPreView(true); }
@@ -17,7 +18,7 @@ public class PreViewScript : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private void Start()
     {
         if(Resources.Load("sceneicons/" + SceneManager.GetActiveScene().name))
-            ImageLevel = Resources.Load("sceneicons/" + SceneManager.GetActiveScene().name);
+            ImageLevel.GetComponent<RawImage>().texture = (Texture)Resources.Load("sceneicons/" + SceneManager.GetActiveScene().name);
     }
 
     public void SetPreView(bool _status)

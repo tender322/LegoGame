@@ -35,5 +35,9 @@ public class CameraController : MonoBehaviour
         transform.RotateAround(StartField.transform.position,Vector3.up, deltaX*GM.sensivity_cam);
         transform.RotateAround(StartField.transform.position,transform.right, deltaY*-GM.sensivity_cam);
 
+        Camera.main.fieldOfView = JS.ChangeZoom();
+
+
+
     }
 }

@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     private Slider CameraSensivity;
     private Slider LegoSensivity;
+    public int AudioSatatus;
+    public int _lastrotation;
 
     private void Start()
     {

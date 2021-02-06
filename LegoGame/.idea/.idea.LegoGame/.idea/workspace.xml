@@ -30,6 +30,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Settings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CheckerLevel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" root0="FORCE_HIGHLIGHTING" />
@@ -39,21 +40,22 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneReady.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/Scenes.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveNLoadLego.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ScrollController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/JoyStick.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Settings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RayCast.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/JoyStick.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Settings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LegoController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CheckerLevel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScrollController.cs" />
       </list>
     </option>
   </component>
@@ -105,6 +107,10 @@
       <workItem from="1612186844110" duration="920000" />
       <workItem from="1612274851828" duration="1798000" />
       <workItem from="1612347438558" duration="12491000" />
+      <workItem from="1612430313837" duration="2733000" />
+      <workItem from="1612521472612" duration="1604000" />
+      <workItem from="1612535384605" duration="6848000" />
+      <workItem from="1612610540884" duration="5937000" />
     </task>
     <servers />
   </component>
