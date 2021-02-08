@@ -17,7 +17,10 @@ public class SceneButton : MonoBehaviour
     {
         SceneLoad = _scene;
         StatusScene = status;
-        transform.GetChild(0).GetComponent<Text>().text = _scene;
+        transform.GetChild(0).GetChild(0).GetComponent<Text>().text = _scene;
+        transform.GetChild(1).GetComponent<RawImage>().texture = (Texture)Resources.Load("sceneicons/"+_scene);
+        //transform.GetChild(0).GetComponent<Text>().text = _scene;
+        //this.gameObject.GetComponent<RawImage>().texture = (Texture)Resources.Load("sceneicons/"+_scene);
         if (!status)
         {
             this.gameObject.GetComponent<RawImage>().color = Color.gray;

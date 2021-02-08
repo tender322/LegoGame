@@ -15,9 +15,11 @@
           <e p="JoyStick.cs" t="Include" />
           <e p="LegoController.cs" t="Include" />
           <e p="MainMenuScripts" t="Include">
+            <e p="BackGroundScript.cs" t="Include" />
             <e p="SceneButton.cs" t="Include" />
             <e p="SceneController.cs" t="Include" />
             <e p="Scenes.cs" t="Include" />
+            <e p="ScreenController.cs" t="Include" />
           </e>
           <e p="PreViewScript.cs" t="Include" />
           <e p="RayCast.cs" t="Include" />

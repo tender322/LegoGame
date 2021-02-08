@@ -29,6 +29,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/ScreenController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Unity/unityInstaller/2020.2.2f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/StencilMaterial.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/BackGroundScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Settings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CheckerLevel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -43,19 +46,21 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/Scenes.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveNLoadLego.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RayCast.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/JoyStick.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Settings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LegoController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CheckerLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScrollController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/ScreenController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/BackGroundScript.cs" />
       </list>
     </option>
   </component>
@@ -110,7 +115,9 @@
       <workItem from="1612430313837" duration="2733000" />
       <workItem from="1612521472612" duration="1604000" />
       <workItem from="1612535384605" duration="6848000" />
-      <workItem from="1612610540884" duration="5937000" />
+      <workItem from="1612610540884" duration="7139000" />
+      <workItem from="1612708086988" duration="2091000" />
+      <workItem from="1612801607502" duration="5240000" />
     </task>
     <servers />
   </component>

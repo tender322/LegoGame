@@ -7,13 +7,14 @@ using UnityEngine.UI;
 
 public class PreViewScript : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    public GameObject ImageLevel;
-    public GameObject Window;
+    
     
     public void OnPointerDown(PointerEventData eventData) {SetPreView(true); }
 
     public void OnPointerUp(PointerEventData eventData) { SetPreView(false); }
-
+    
+    public GameObject ImageLevel;
+    public GameObject Window;
     
     private void Start()
     {
@@ -24,5 +25,6 @@ public class PreViewScript : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void SetPreView(bool _status)
     {
         Window.SetActive(_status);
+        
     }
 }
