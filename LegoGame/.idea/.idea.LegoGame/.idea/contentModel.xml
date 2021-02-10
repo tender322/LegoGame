@@ -20,6 +20,7 @@
             <e p="SceneController.cs" t="Include" />
             <e p="Scenes.cs" t="Include" />
             <e p="ScreenController.cs" t="Include" />
+            <e p="WindowsController.cs" t="Include" />
           </e>
           <e p="PreViewScript.cs" t="Include" />
           <e p="RayCast.cs" t="Include" />

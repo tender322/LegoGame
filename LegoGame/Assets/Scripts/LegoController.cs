@@ -262,6 +262,7 @@ public class LegoController : MonoBehaviour
             var c = 0;
             float MinDistance = -Mathf.Infinity;
             bool next = false;
+            List<RayCast> _rays = new List<RayCast>();
             foreach (Transform d in ActiveLego.gameObject.transform)
             {
                 if (d.transform.tag == "cylinder" || d.transform.tag =="ended")
@@ -273,13 +274,26 @@ public class LegoController : MonoBehaviour
                             MinDistance = d.GetComponent<RayCast>().RayCastObjectY;
                         }
                         c++;
+                    }else if (d.GetComponent<RayCast>().RayCastObjectControllerY != 0)
+                    {
+                        _rays.Add(d.GetComponent<RayCast>());
                     }else if (d.GetComponent<RayCast>().RayCastObjectY == 0)
                     { return; }
                 }
-
-                if (c == ActiveLego.GetComponent<Controller>().c) { next = true; }
+                
             }
 
+            for (int i = 0; i < _rays.Count; i++)
+            {
+                if (_rays[i].RayCastObjectControllerY < MinDistance)
+                {
+                    c++;
+                }
+            }
+            
+            if (c == ActiveLego.GetComponent<Controller>().c) { next = true; }
+            
+            
             if (next)
             {
                 foreach (Transform d in ActiveLego.gameObject.transform)

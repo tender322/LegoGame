@@ -57,9 +57,12 @@ public class JoyStick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     private void Update()
     {
-        if (_floatzoom.value != _lastfloatzoom)
+        if (_floatzoom)
         {
-            _lastfloatzoom = _floatzoom.value;
+            if (_floatzoom.value != _lastfloatzoom)
+            {
+                _lastfloatzoom = _floatzoom.value;
+            }
         }
     }
 

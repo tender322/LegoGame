@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4292957320243976436}
   m_Layer: 0
   m_Name: Cyl (1)
-  m_TagString: cylinder
+  m_TagString: ended
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
   DontChange: {fileID: 0}
+  _pasteobject: 0
   c: 0
   ActiveBusyObjects: []
 --- !u!65 &5049669118376472849
@@ -186,7 +187,7 @@ GameObject:
   - component: {fileID: 4292957322119832035}
   m_Layer: 0
   m_Name: Cyl
-  m_TagString: cylinder
+  m_TagString: ended
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

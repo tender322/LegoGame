@@ -5,9 +5,11 @@ using UnityEngine;
 public class BackGroundScript : MonoBehaviour
 {
     public Color _Color;
+    private Camera main;
 
     void Start()
     {
+        main = Camera.main;
         foreach (Transform firstparent in this.gameObject.transform)
         {
             foreach (Transform second in firstparent.transform)
@@ -18,7 +20,7 @@ public class BackGroundScript : MonoBehaviour
                 }
             }
         }
-        InvokeRepeating("changelerpcamera",1f,5f);
+        InvokeRepeating("changelerpcamera",0f,5f);
         
     }
 
@@ -26,7 +28,7 @@ public class BackGroundScript : MonoBehaviour
     public void changelerpcamera()
     {
         Vector3 _target = new Vector3(Random.Range(-9,3),Random.Range(1,13),-10f);
-        StartCoroutine(LerpPosition(Camera.main,_target,5f));
+        StartCoroutine(LerpPosition(main,_target,5f));
 
     }
     

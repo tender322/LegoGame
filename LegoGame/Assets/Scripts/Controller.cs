@@ -8,6 +8,7 @@ public class Controller : MonoBehaviour
     private GameManager GM;
     public GameObject Parent;
     public GameObject DontChange;
+    public bool _pasteobject;
     
     private int[] CountCylinder;
     

@@ -12,6 +12,7 @@ public class RayCast : MonoBehaviour
     public Color DefaultColor;
     public Color SelectColor;
     public float RayCastObjectY;
+    public float RayCastObjectControllerY;
     public Transform busyObject;
     
     private MeshRenderer MR;
@@ -42,7 +43,11 @@ public class RayCast : MonoBehaviour
             {
                 if (!hits[i].transform.gameObject.GetComponent<Controller>())
                 {
-                    FilteredRay.Add(hits[i]);
+                  FilteredRay.Add(hits[i]);
+                }
+                else if(hits[i].transform.gameObject.GetComponent<Controller>()._pasteobject)
+                {
+                    FilteredRay.Add(hits[i]);  
                 }
             }
 
@@ -53,7 +58,7 @@ public class RayCast : MonoBehaviour
                 RaycastHit maxRayCast = FilteredRay[0];
                 for (int i = 0; i < FilteredRay.Count; i++)
                 {
-                    if (maxRayPosition > FilteredRay[i].transform.position.y)
+                    if (maxRayPosition < FilteredRay[i].transform.position.y)
                     {
                         maxRayPosition = FilteredRay[i].transform.position.y;
                         maxRayCast = FilteredRay[i];
@@ -61,7 +66,7 @@ public class RayCast : MonoBehaviour
                 }
                 return maxRayCast.collider;
             }
-          
+            
         }
         return null;
     }
@@ -76,19 +81,39 @@ public class RayCast : MonoBehaviour
 
        if (hit != null)
        {
-           if (_LO) { _LO.gameObject.GetComponent<RayCast>().ChangeDefaultMaterial(); }
+           if (!hit.gameObject.GetComponent<Controller>())
+           {
+               if (_LO)
+               {
+                   _LO.gameObject.GetComponent<RayCast>().ChangeDefaultMaterial();
+               }
 
-           hit.gameObject.GetComponent<RayCast>().ChangeMaterial();
-           RayCastObjectY = hit.gameObject.GetComponent<Transform>().position.y;
-           if (hit.gameObject.GetComponent<RayCast>().busy)
+               hit.gameObject.GetComponent<RayCast>().ChangeMaterial();
+               RayCastObjectY = hit.gameObject.GetComponent<Transform>().position.y;
+               if (hit.gameObject.GetComponent<RayCast>().busy)
+               {
+                   RayCastObjectY = 0;
+                   RayCastObjectControllerY = 0;
+               }
+
+               _LO = hit.gameObject;
+               RayCastObjectControllerY = 0;
+           }
+           else
+           {
                RayCastObjectY = 0;
-           _LO = hit.gameObject;
+               RayCastObjectControllerY = hit.gameObject.GetComponent<Transform>().position.y + .2f;
+               if (_LO) { _LO.gameObject.GetComponent<RayCast>().ChangeDefaultMaterial(); }
+               _LO = null;
+           }
        }
+
        if(hit == null)
        {
            if (_LO) { _LO.gameObject.GetComponent<RayCast>().ChangeDefaultMaterial(); }
-           _LO = null;
            RayCastObjectY = 0;
+           RayCastObjectControllerY = 0;
+           _LO = null; 
        }
 
 
@@ -123,10 +148,14 @@ public class RayCast : MonoBehaviour
 
     public void SetBusy()
     {
-        _LO.GetComponent<RayCast>().ChangeBusy();
-        _LO.GetComponent<RayCast>().busyObject = this.gameObject.transform;
-        _LO.GetComponent<BoxCollider>().enabled = false;
-        this.gameObject.GetComponentInParent<Controller>().ActiveBusyObjects.Add(_LO.transform);
+        if (_LO)
+        {
+            _LO.GetComponent<RayCast>().ChangeBusy();
+            _LO.GetComponent<RayCast>().busyObject = this.gameObject.transform;
+            _LO.GetComponent<BoxCollider>().enabled = false;
+            this.gameObject.GetComponentInParent<Controller>().ActiveBusyObjects.Add(_LO.transform);
+        }
+        
     }
 
     public void ChangeBusy()

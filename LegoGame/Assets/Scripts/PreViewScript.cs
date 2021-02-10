@@ -9,22 +9,38 @@ public class PreViewScript : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 {
     
     
-    public void OnPointerDown(PointerEventData eventData) {SetPreView(true); }
+    public void OnPointerDown(PointerEventData eventData) {SetPreView(); }
 
-    public void OnPointerUp(PointerEventData eventData) { SetPreView(false); }
-    
-    public GameObject ImageLevel;
-    public GameObject Window;
-    
-    private void Start()
-    {
-        if(Resources.Load("sceneicons/" + SceneManager.GetActiveScene().name))
-            ImageLevel.GetComponent<RawImage>().texture = (Texture)Resources.Load("sceneicons/" + SceneManager.GetActiveScene().name);
-    }
+    public void OnPointerUp(PointerEventData eventData) {}
 
-    public void SetPreView(bool _status)
+    public Camera ViewCam;
+    public GameObject _settings;
+    public GameObject _paste;
+    public GameObject _rot;
+    public GameObject _zoom;
+
+    private bool _main;
+
+    public void SetPreView()
     {
-        Window.SetActive(_status);
-        
+        if (_main)
+        {
+            _main = false;
+            Camera.main.depth = -10;
+            _settings.SetActive(false);
+            _paste.SetActive(false);
+            _rot.SetActive(false);
+            _zoom.SetActive(false);
+        }
+        else
+        {
+            _main = true;
+            Camera.main.depth = -1;
+            _settings.SetActive(true);
+            _paste.SetActive(true);
+            _rot.SetActive(true); 
+            _zoom.SetActive(true);
+        }
+
     }
 }
