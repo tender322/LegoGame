@@ -19,13 +19,14 @@ public class SceneButton : MonoBehaviour
         transform.GetChild(0).GetComponent<RawImage>().texture = (Texture)Resources.Load("sceneicons/"+_scene);
         if (!status)
         {
-            this.gameObject.GetComponent<RawImage>().color = Color.gray;
+            this.gameObject.transform.GetChild(0).GetComponent<RawImage>().color = Color.gray;
         }
     }
     public void LoadScene()
     {
         if (StatusScene)
         {
+            Debug.Log("WindowsController");
             GameObject.FindObjectOfType<WindowsController>().StartScenes(SceneLoad);
         }
     }

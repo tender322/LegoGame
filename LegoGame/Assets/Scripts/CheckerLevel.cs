@@ -41,9 +41,10 @@ public class CheckerLevel : MonoBehaviour
 
     private void Update()
     {
-        if (_procent > alllegocount * .8f)
+        if (_procent > alllegocount * .75f)
         {
-            Debug.Log("EndGameLegoScene");
+            Debug.Log("PROCENT > *.75f");
+            GameObject.FindObjectOfType<GameManager>().Ended();
         }
     }
 }

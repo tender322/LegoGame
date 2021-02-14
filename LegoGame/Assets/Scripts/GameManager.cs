@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     public int AudioSatatus;
     public int _lastrotation;
 
+    public GameObject EndObject;
     private void Start()
     {
         gameObject.GetComponent<SceneGenerator>().GenerateScene();
@@ -40,5 +42,20 @@ public class GameManager : MonoBehaviour
         sensitivity = LegoSensivity.value;
         sensivity_cam = CameraSensivity.value;
     }
-    
+
+    public void Ended()
+    {
+        EndObject.SetActive(true);
+    }
+
+    public void GoMainMenu()
+    {
+        SceneManager.LoadScene("MainSceneGame");
+    }
+
+    public void SetSceneCompleted()
+    {
+        ScenesCompleted.SetCompleted(SceneManager.GetActiveScene().name);
+    }
+
 }

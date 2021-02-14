@@ -18,6 +18,7 @@ public class PreViewScript : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public GameObject _paste;
     public GameObject _rot;
     public GameObject _zoom;
+    public GameObject _scroll;
 
     private bool _main;
 
@@ -31,6 +32,7 @@ public class PreViewScript : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             _paste.SetActive(false);
             _rot.SetActive(false);
             _zoom.SetActive(false);
+            _scroll.SetActive(false);
         }
         else
         {
@@ -40,6 +42,7 @@ public class PreViewScript : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             _paste.SetActive(true);
             _rot.SetActive(true); 
             _zoom.SetActive(true);
+            _scroll.SetActive(true);
         }
 
     }

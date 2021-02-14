@@ -16,7 +16,6 @@ public class SceneController : MonoBehaviour
     private void Start()
     {
         SaveNLoadLego SNL = gameObject.GetComponent<SaveNLoadLego>();
-        
     }
 
     public void LoadEnding()

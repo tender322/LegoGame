@@ -45,24 +45,25 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneReady.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/Scenes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SaveNLoadLego.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Settings.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CheckerLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScrollController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/ScreenController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/JoyStick.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LegoController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RayCast.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/BackGroundScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/WindowsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveNLoadLego.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/WindowsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/ScenesCompleted.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CheckerLevel.cs" />
       </list>
     </option>
   </component>
@@ -122,6 +123,12 @@
       <workItem from="1612801607502" duration="5240000" />
       <workItem from="1612887229212" duration="7009000" />
       <workItem from="1612966176440" duration="10762000" />
+      <workItem from="1613063361929" duration="1271000" />
+      <workItem from="1613211769214" duration="7545000" />
+      <workItem from="1613300645098" duration="1893000" />
+      <workItem from="1613304430986" duration="174000" />
+      <workItem from="1613304657044" duration="362000" />
+      <workItem from="1613305069832" duration="832000" />
     </task>
     <servers />
   </component>
