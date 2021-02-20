@@ -29,15 +29,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/ScreenController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../Unity/unityInstaller/2020.2.2f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/StencilMaterial.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/BackGroundScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Settings.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CheckerLevel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/WindowsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SelectLevel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CheckerLevel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Settings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/ScreenController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/BackGroundScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -45,7 +45,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneReady.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/Scenes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Settings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonController.cs" />
@@ -57,13 +56,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/RayCast.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/BackGroundScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SaveNLoadLego.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/WindowsController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/ScenesCompleted.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelsList.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveNLoadLego.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SelectLevel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/WindowsController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CheckerLevel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" />
       </list>
     </option>
   </component>
@@ -129,6 +131,7 @@
       <workItem from="1613304430986" duration="174000" />
       <workItem from="1613304657044" duration="362000" />
       <workItem from="1613305069832" duration="832000" />
+      <workItem from="1613807736941" duration="8088000" />
     </task>
     <servers />
   </component>
@@ -153,6 +156,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1744" y="222" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613814199067">
+      <screen x="1360" y="-74" width="1280" height="984" />
+    </state>
+    <state x="1744" y="222" key="#com.intellij.fileTypes.FileTypeChooser/1360.-74.1280.984/0.0.1360.728/2640.-74.1024.728@1360.-74.1280.984" timestamp="1613814199067" />
     <state x="1656" y="226" width="672" height="677" key="run.anything.popup" timestamp="1612021022664">
       <screen x="1360" y="0" width="1280" height="984" />
     </state>

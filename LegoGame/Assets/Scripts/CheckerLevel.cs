@@ -12,7 +12,8 @@ public class CheckerLevel : MonoBehaviour
     [SerializeField]private List<_onilelego> OnlineViewList = new List<_onilelego>();
     private int _procent;
     private int alllegocount;
-    void Start()
+   
+    public void BeforeLoadView()
     {
         _procent = 0;
         foreach (Transform child in PreViewScen.transform)

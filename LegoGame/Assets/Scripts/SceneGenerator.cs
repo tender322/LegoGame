@@ -9,7 +9,11 @@ public class SceneGenerator : MonoBehaviour
     
     void Start()
     {
-        Preview = GameObject.Find("Preview");
+        string _levelname = SelectLevel.getLevel();
+        var preview = Instantiate(Resources.Load("levels/" + _levelname));
+        Preview = (GameObject)preview;
+        gameObject.GetComponent<CheckerLevel>().PreViewScen = (GameObject)preview;
+        gameObject.GetComponent<CheckerLevel>().BeforeLoadView();
         foreach (Transform d in Preview.transform)
         {
             objects v = new objects();

@@ -56,7 +56,8 @@ public class WindowsController : MonoBehaviour
 
     public void LoadScene(string _name)
     {
-        SceneManager.LoadScene(_name);
+        SelectLevel.setLevel(_name);
+        SceneManager.LoadScene("GameScene");
     }
 
 }
