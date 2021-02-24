@@ -12,7 +12,13 @@ public class CheckerLevel : MonoBehaviour
     [SerializeField]private List<_onilelego> OnlineViewList = new List<_onilelego>();
     private int _procent;
     private int alllegocount;
-   
+
+    private GameManager GM;
+    private void Start()
+    {
+        GM = GameObject.FindObjectOfType<GameManager>();
+    }
+
     public void BeforeLoadView()
     {
         _procent = 0;
@@ -27,14 +33,16 @@ public class CheckerLevel : MonoBehaviour
 
     public void LevelCheck()
     {
+        Debug.Log("LEVELCHECK");
         _procent = 0;
         alllegocount = StartScene.transform.childCount;
         foreach (Transform child in StartScene.transform)
         {
+            Debug.Log("TRYTOCHECK");
             var _check = PreViewList.Any(x => x._objtag == child.tag && 
                                               (x._pos.x == child.transform.localPosition.x && x._pos.z == child.transform.localPosition.z));
             if (_check)
-            {
+            {Debug.Log("CHECKTRUE ++");
                 _procent++;
             }
         }
@@ -45,7 +53,7 @@ public class CheckerLevel : MonoBehaviour
         if (_procent > alllegocount * .75f)
         {
             Debug.Log("PROCENT > *.75f");
-            GameObject.FindObjectOfType<GameManager>().Ended();
+            GM.Ended();
         }
     }
 }

@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameObject.GetComponent<SceneGenerator>().GenerateScene();
-        Debug.Log("generate");
     }
 
     public void SetControllLego(bool _bool) {controllable = _bool;}

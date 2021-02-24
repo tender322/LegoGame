@@ -34,6 +34,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CheckerLevel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Settings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/ScreenController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -56,7 +57,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/RayCast.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/BackGroundScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PreViewScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/ScenesCompleted.cs" />
@@ -64,8 +64,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveNLoadLego.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/SelectLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenuScripts/WindowsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/GeneratorField.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelStats.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CheckerLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GeneratorField.cs" />
       </list>
     </option>
   </component>
@@ -132,6 +136,7 @@
       <workItem from="1613304657044" duration="362000" />
       <workItem from="1613305069832" duration="832000" />
       <workItem from="1613807736941" duration="8088000" />
+      <workItem from="1614176501311" duration="4174000" />
     </task>
     <servers />
   </component>

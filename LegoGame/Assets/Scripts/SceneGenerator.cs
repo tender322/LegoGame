@@ -13,6 +13,9 @@ public class SceneGenerator : MonoBehaviour
         var preview = Instantiate(Resources.Load("levels/" + _levelname));
         Preview = (GameObject)preview;
         gameObject.GetComponent<CheckerLevel>().PreViewScen = (GameObject)preview;
+        Vector2 field = Preview.GetComponent<LevelStats>().Field;
+        GameObject.Find("StartField").GetComponent<GeneratorField>().GenerateField(field);
+        GameObject.Find("StartField_1").GetComponent<GeneratorField>().GenerateField(field);
         gameObject.GetComponent<CheckerLevel>().BeforeLoadView();
         foreach (Transform d in Preview.transform)
         {

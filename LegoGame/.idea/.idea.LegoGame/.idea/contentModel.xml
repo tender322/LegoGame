@@ -10,8 +10,10 @@
           <e p="CheckerLevel.cs" t="Include" />
           <e p="Controller.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="GeneratorField.cs" t="Include" />
           <e p="JoyStick.cs" t="Include" />
           <e p="LegoController.cs" t="Include" />
+          <e p="LevelStats.cs" t="Include" />
           <e p="MainMenuScripts" t="Include">
             <e p="BackGroundScript.cs" t="Include" />
             <e p="SceneButton.cs" t="Include" />
