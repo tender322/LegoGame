@@ -7,6 +7,7 @@ public class GeneratorField : MonoBehaviour
     public void GenerateField(Vector2 _vector)
     {
         GameObject field = (GameObject)Resources.Load("objects/Lego2x2");
+        field.GetComponent<Controller>().DefaultColor = Color.green;
         float startposX = -_vector.x + 1;
         float startposY = -_vector.y + 1;
         

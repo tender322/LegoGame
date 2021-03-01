@@ -12,7 +12,7 @@ public class Controller : MonoBehaviour
     
     private int[] CountCylinder;
     
-    private Color DefaultColor;
+    public Color DefaultColor;
 
     private List<Transform> ActiveRaycast = new List<Transform>();
     
@@ -23,9 +23,9 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
+        InvokeRepeating("SetColor",1f,2f);
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
-        DefaultColor = transform.GetChild(0).GetComponent<MeshRenderer>().material.color;
-       
+
         foreach (Transform d in this.gameObject.transform)
         {
             if (d.GetComponent<MeshRenderer>())
@@ -64,6 +64,19 @@ public class Controller : MonoBehaviour
         {
             if(gameObject.tag=="misk")
                 DontChange.GetComponent<MeshRenderer>().material.color = new Color(87/255f,26/255f,0f,255f);
+        }
+    }
+
+
+    private void SetColor()
+    {
+        foreach (Transform d in this.gameObject.transform)
+        {
+            if (d.GetComponent<MeshRenderer>())
+            {
+                if (d.gameObject.tag != "DontChangeColor")
+                    d.GetComponent<MeshRenderer>().material.color = DefaultColor;
+            }
         }
     }
 
